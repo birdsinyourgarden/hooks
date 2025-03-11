@@ -1,12 +1,24 @@
-import Crud from "../src/components/Crud.jsx";
+import React, { useState } from 'react';
+import UseForm from './components/UseForm'; 
+import UseLoadData from './components/UseLoadData'; 
 
-const App = () => {
+function App() {
+  const [userData, setUserData] = useState({
+    nombre: 'Juan Pérez',
+    email: 'juan@example.com',
+  });
+
   return (
-    <div className="App">
-      <h1>Mi Aplicación React</h1>
-      <Crud />
+    <div>
+      <h1>Aplicación de Formularios</h1>
+      
+      <UseForm />
+
+      <hr />
+      
+      <UseLoadData userData={userData} />
     </div>
   );
-};
+}
 
 export default App;
